@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <title>weatherBEM</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+    <body ng-app="weatherApp">
+
+        <div ng-controller="Forecast as vm">Hello, {{vm.weather}}</div>
+
+    <!-- third party and lib js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script type='application/javascript' src='lib/fastclick.js'></script>
+
+    <!-- main module -->
+    <script type='application/javascript' src='js/weatherApp.module.js'></script>
+
+    <!-- services module -->
+    <script type='application/javascript' src='js/services/services.module.js'></script>
+    <script type='application/javascript' src='js/services/weather.service.js'></script>
+
+    <!-- forecast module -->
+    <script type='application/javascript' src='js/forecast/forecast.module.js'></script>
+    <script type='application/javascript' src='js/forecast/forecast.js'></script>
+    </body>
+</html>
