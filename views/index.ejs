@@ -4,12 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
 
     <title>weatherBEM</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
     <body ng-app="weatherApp">
 
-        <div ng-controller="Forecast as vm">Hello, {{vm.weather}}</div>
+        <div ng-include="'app/layout/shell.html'"></div>
 
     <!-- third party and lib js -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
@@ -17,14 +17,25 @@
     <script type='application/javascript' src='lib/fastclick.js'></script>
 
     <!-- main module -->
-    <script type='application/javascript' src='js/weatherApp.module.js'></script>
+    <script type='application/javascript' src='app/weatherApp.module.js'></script>
+
+    <!-- layout -->
+    <script type='application/javascript' src='app/layout/layout.module.js'></script>
+    <script type='application/javascript' src='app/layout/shell.js'></script>
 
     <!-- services module -->
-    <script type='application/javascript' src='js/services/services.module.js'></script>
-    <script type='application/javascript' src='js/services/weather.service.js'></script>
+    <script type='application/javascript' src='app/services/services.module.js'></script>
+    <script type='application/javascript' src='app/services/weatherService.js'></script>
+
+    <!-- widgets -->
+    <script type='application/javascript' src='app/widgets/widgets.module.js'></script>
+    <script type='application/javascript' src='app/widgets/wbWidgetHeader.js'></script>
 
     <!-- forecast module -->
-    <script type='application/javascript' src='js/forecast/forecast.module.js'></script>
-    <script type='application/javascript' src='js/forecast/forecast.js'></script>
+    <script type='application/javascript' src='app/forecast/forecast.module.js'></script>
+    <script type='application/javascript' src='app/forecast/forecast.js'></script>
+
+    <!-- mock data for forecasts -->
+    <script type='application/javascript' src='app/services/mockDataService.js'></script>
     </body>
 </html>

@@ -1,0 +1,15 @@
+<!-- <div data-wb-widget-header
+    title="Hardcoded Header Title"
+    subtitle="Subtitle"
+    right-text="right text">
+</div> -->
+
+<div ng-controller="Forecast as vm">
+
+    <div ng-repeat="f in vm.weather">
+        {{ f.city.name }}
+        {{ f.list[0].temp.day }}
+    </div>
+
+</div>
+
