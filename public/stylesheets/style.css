@@ -1,8 +1,74 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+    margin: 0;
+    padding: 0;
+    background: url('../images/dotsBG.png');
+}
+/* common classes */
+
+.global-padding {
+    padding: 2%;
+}
+.global-radius {
+    border-radius: 6px;
+}
+.floated-right {
+    float: right;
+}
+.floated-left {
+    float: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+/* --------------- */
+
+.b-header {
+    background-color: rgba(10, 55, 126, 0.5);
+    position: relative;
+    color: #FFF;
 }
 
-a {
-  color: #00B7FF;
+.b-header__nav {
+    margin-bottom: 0;
+}
+
+.b-header__item {
+    display: inline-block;
+    background-color: rgba(17, 70, 154, 0.5);
+    margin: 2% 0 0 2%;
+    padding: 2%;
+}
+
+.b-forecast {
+    background-color: rgba(0, 121, 101, 0.5);
+    position: relative;
+    color: #FFF;
+}
+.b-forecast__container {
+    width: 40%;
+    margin: 5%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.b-forecast__title--font-large {
+    font-size: 20px;
+}
+.b-forecast__container--font-xlarge {
+    font-size: 30px;
+}
+.b-forecast__content--half {
+    width: 50%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.b-forecast__container--font-xlarge {
+    font-size: 30px;
 }
