@@ -16,13 +16,22 @@
             var icon = {};
             switch (weather) {
                 case "Clear":
-                    icon = "wi-day-sunny";
+                    icon = {
+                        "logo": "wi-day-sunny",
+                        "color": "yellow"
+                    };
                     break;
                 case "Rain":
-                    icon = "wi-showers";
+                    icon = {
+                        "logo": "wi-showers",
+                        "color": "steelblue"
+                    };
                     break;
                 case "Clouds":
-                    icon = "wi-cloudy";
+                    icon = {
+                        "logo": "wi-cloudy",
+                        "color": "dimgray"
+                    };
                     break;
             }
             return icon;
