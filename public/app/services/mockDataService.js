@@ -5,9 +5,9 @@
         .module('weatherApp.services')
         .factory('mockData', mockData);
 
-    mockData.$inject = ['$http'];
+    mockData.$inject = ['$http', 'iconService'];
 
-    function mockData($http) {
+    function mockData($http, iconService) {
         return {
             getForecasts: getForecasts
         };
@@ -18,6 +18,12 @@
                 .catch(mockForecastsFailed);
 
             function mockForecastsComplete(response) {
+                for (var i = 0; i < response.data.length; i++) {
+                    var status = response.data[i].list[0].weather[0].main;
+                    var icon = iconService.getIcon(status);
+                    response.data[i].icon = icon;
+                }
+
                 return response.data;
             }
 

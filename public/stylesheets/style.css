@@ -2,7 +2,9 @@ html, body {
     margin: 0;
     padding: 0;
     background: url('../images/dotsBG.png');
+    font-family: 'Roboto Condensed', sans-serif;
 }
+
 /* common classes */
 
 .global-padding {
@@ -10,6 +12,9 @@ html, body {
 }
 .global-radius {
     border-radius: 6px;
+}
+.global-vert-padding {
+    padding: 3% 0;
 }
 .floated-right {
     float: right;
@@ -28,6 +33,17 @@ html, body {
     content: "";
     display: block;
 }
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.box-shadow {
+    -webkit-box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
 /* --------------- */
 
 .b-header {
@@ -64,11 +80,29 @@ html, body {
 .b-forecast__container--font-xlarge {
     font-size: 30px;
 }
+.b-forecast__content {
+    width: 100%;
+    margin-top: 50px;
+}
 .b-forecast__content--half {
     width: 50%;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.3);
 }
 .b-forecast__container--font-xlarge {
-    font-size: 30px;
+    font-size: 36px;
+    line-height: 52px;
+}
+.b-forecast__icon {
+    font-size: 26px;
+    line-height: 52px;
+}
+
+.b-footer {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(19, 43, 79, 1);
+    position: fixed;
+    bottom: 0;
+    color: #FFF;
 }
