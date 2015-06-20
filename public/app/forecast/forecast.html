@@ -9,7 +9,7 @@
     <div ng-repeat="f in vm.weather">
         <div class="b-forecast__container global-radius text-center floated-left clearfix box-shadow rotated">
             <div class="b-forecast__title--font-large global-vert-padding truncate">
-                {{ f.city.name }}
+                {{ f.cityName }}
             </div>
 
             <div class="b-forecast__content--half floated-left">
@@ -20,12 +20,12 @@
             </div>
 
             <div class="b-forecast__content--half floated-left">
-                <div class="b-forecast__container--font-xlarge">{{ f.list[0].temp.day | number:0 }}˚</div>
+                <div class="b-forecast__container--font-xlarge">{{ f.currentTemp | number:0 }}˚</div>
             </div>
 
             <div class="b-forecast__content">
-                <div class="global-vert-padding">hi: {{ f.list[0].temp.max | number:0}}</div>
-                <div class="global-vert-padding">lo: {{ f.list[0].temp.min | number:0}}</div>
+                <div class="global-vert-padding">hi: {{ f.hiTemp | number:0}}</div>
+                <div class="global-vert-padding">lo: {{ f.loTemp | number:0}}</div>
             </div>
 
         </div>

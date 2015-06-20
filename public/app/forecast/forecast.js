@@ -14,7 +14,8 @@
             activate();
 
             function activate() {
-                return mockData.getForecasts().then(function(data) {
+                return weather.getForecasts().then(function(data) {
+                    console.log(data[0]);
                     vm.weather = data;
  
                     return vm.weather;

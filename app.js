@@ -5,8 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/weatherBEM');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+    console.log('database connected!');
+});
+
 var routes = require('./routes/index');
-var users = require('./routes/users');
+// var forecasts = require('./routes/forecasts');
 
 var app = express();
 
@@ -22,8 +31,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/forecasts', users);
+app.use('/api', routes);
+// app.use('/forecasts', forecasts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
