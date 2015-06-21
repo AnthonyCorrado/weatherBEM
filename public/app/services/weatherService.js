@@ -48,12 +48,6 @@
                 .then(getForecastsComplete)
                 .catch(getForecastsFailed);
 
-            function pushToArray(response) {
-                allCitites.push(response.data);
-                console.log(allCitites);
-                // getForecastsComplete(response);
-            }
-
             function getForecastsComplete(response) {
                 console.log(response.data);
                 for (var i = 0; i < response.data.length; i++) {

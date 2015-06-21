@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
  
 var forecastSchema = new Schema({
+    cityId: Number,
     cityName: String,
     currentTemp: Number,
     hiTemp: Number,
