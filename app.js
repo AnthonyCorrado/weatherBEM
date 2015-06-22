@@ -1,4 +1,3 @@
-var config = require('./config.js');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,9 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-var databaseURI = config.database;
-console.log(config.database);
-mongoose.connect('mongodb://localhost/weatherBEM');
+
+var uristring = process.env.MONGOLAB_URI || 'mongodb://localhost/weatherBEM';
+
+mongoose.connect(uristring, function (err, res) {
+    if (err) {
+        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log ('Succeeded connected to: ' + uristring);
+    }
+});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
