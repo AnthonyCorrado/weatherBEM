@@ -34,16 +34,18 @@ function isUpdated() {
         if (err) {
             return res.send(err);
         }
-        if (timestamp) {
-            if ((time - timestamp[0].lastUpdated) > 300000) {
-                updateWeather();
-            } else {
-                console.log('no update needed');
-            }
-        } else {
+        // if (timestamp) {
+        //     if ((time - timestamp[0].lastUpdated) > 300000) {
+        //         updateWeather();
+        //     } else {
+        //         console.log('no update needed');
+        //     }
+        // } else {
+        //     createTimestamp();
+        //     updateWeather();
+        // }
             createTimestamp();
             updateWeather();
-        }
     });
 }
 
